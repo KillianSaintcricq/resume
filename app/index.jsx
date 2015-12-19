@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, Link } from 'react-router'
-import Home from './views/Home/Home.jsx'
-import About from './views/About/About.jsx'
+import { Router, Route, Link, IndexRoute } from 'react-router'
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import Home from './components/Home/Home.jsx'
+import Template from './views/Template/Template.jsx'
 
 ReactDOM.render((
-    <Router>
-        <Route path="/" component={Home}>
-            <Route path="/about" component={About} />
+    <Router history={createBrowserHistory({queryKey: false})}>
+        <Route path="/" component={Template}>
+            <IndexRoute component={Home} />
         </Route>
     </Router>
-), document.body)
+), document.getElementById('app'));
