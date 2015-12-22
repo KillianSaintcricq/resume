@@ -1,16 +1,16 @@
-import React from 'react'
-import Header from '../../components/Header/Header.jsx'
+import React from 'react';
+import Menu from '../../components/Menu/Menu.jsx';
 
-import './template.scss'
+import './template.scss';
 
 class Template extends React.Component {
     render() {
         return (
-            <div className="template">
-                <Header />
+            <div className="main-template">
+                <Menu />
                 {this.props.children}
             </div>
-        )
+        );
     }
 }
 

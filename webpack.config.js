@@ -1,9 +1,20 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-    entry: './app/index.jsx',
+    entry: [
+        'webpack-hot-middleware/client',
+        './app/index.jsx'
+    ],
     output: {
-        path: './',
-        filename: 'index.js'
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/dist/'
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
     devServer: {
         contentBase: './app',
         inline: true,
@@ -21,8 +32,8 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css!sass'
+                loaders: ['style', 'css', 'sass']
             }
         ]
     }
-}
+};
