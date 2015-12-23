@@ -8,10 +8,12 @@ class Template extends React.Component {
         return (
             <div className="main-template">
                 <Menu />
-                {this.props.children}
+                <main>
+                    {this.props.children}
+                </main>
             </div>
         );
     }
 }
 
-export default Template
+export default Template;

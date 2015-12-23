@@ -12,14 +12,10 @@ module.exports = {
         publicPath: '/dist/'
     },
     plugins: [
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
-    devServer: {
-        contentBase: './app',
-        inline: true,
-        port: 3333
-    },
     module: {
         loaders: [
             {
@@ -33,6 +29,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ['style', 'css', 'sass']
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)$/,
+                loader: 'file'
             }
         ]
     }

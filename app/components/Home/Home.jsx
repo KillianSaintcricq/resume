@@ -1,13 +1,19 @@
-import React from 'react'
+import React from 'react';
+import classNames from 'classnames';
 
-import './home.scss'
+import './home.scss';
 
 class Home extends React.Component {
+
     render() {
+        const componentClass = classNames('container', 'home');
         return (
-            <div>Home</div>
-        )
+            <div className={componentClass}>
+                Home
+            </div>
+        );
     }
+
 }
 
-export default Home
+export default Home;

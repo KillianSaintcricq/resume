@@ -5,6 +5,7 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import Home from './components/Home/Home.jsx';
 import About from './components/About/About.jsx';
 import Template from './views/Template/Template.jsx';
+import de from 'materialize-css/dist/js/materialize';
 
 render((
     <Router history={createBrowserHistory({queryKey: false})}>

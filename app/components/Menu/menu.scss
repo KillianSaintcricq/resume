@@ -1,0 +1,47 @@
+@import "../../assets/sass/_variables";
+
+.menu {
+
+  .top-nav {
+    height: 180px;
+  }
+
+  .side-nav {
+
+    box-shadow: none;
+    border-right: solid 1px $light-grey;
+
+    li {
+
+      padding: 0;
+
+      &:hover {
+        background-color: white;
+      }
+
+      &.brand-logo {
+        font-size: 20px;
+        line-height: 63px;
+        border-bottom: solid 1px $light-grey;
+        padding-left: 30px;
+      }
+
+      &:not(.brand-logo) {
+        font-weight: 500;
+        a {
+          padding-left: 30px;
+          transition: padding-left 0.5s;
+          &.active {
+            color: $secondary-color;
+          }
+          &:hover {
+            padding-left: 40px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
