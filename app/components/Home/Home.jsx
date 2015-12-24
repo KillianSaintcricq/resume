@@ -1,15 +1,17 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import './home.scss';
 
 class Home extends React.Component {
 
+    componentDidMount() {
+        document.title = this.props.route.page;
+    }
+
     render() {
-        const componentClass = classNames('container', 'home');
         return (
-            <div className={componentClass}>
-                Home
+            <div className="container home">
+                Hooome
             </div>
         );
     }

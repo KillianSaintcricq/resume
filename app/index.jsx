@@ -5,13 +5,12 @@ import createBrowserHistory from 'history/lib/createBrowserHistory';
 import Home from './components/Home/Home.jsx';
 import About from './components/About/About.jsx';
 import Template from './views/Template/Template.jsx';
-import de from 'materialize-css/dist/js/materialize';
 
 render((
     <Router history={createBrowserHistory({queryKey: false})}>
         <Route path="/" component={Template}>
-            <IndexRoute component={Home} />
-            <Route path="about" component={About} />
+            <IndexRoute component={Home} page="Home" />
+            <Route path="about" component={About} page="About" />
         </Route>
     </Router>
 ), document.getElementById('resume'));

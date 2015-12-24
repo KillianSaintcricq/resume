@@ -1,15 +1,17 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import './about.scss';
 
 class About extends React.Component {
 
+    componentDidMount() {
+        document.title = this.props.route.page;
+    }
+
     render() {
-        const componentClass = classNames('container', 'about');
         return (
-            <div className={componentClass}>
-                About
+            <div className="container about">
+                Abouuuuut
             </div>
         );
     }
