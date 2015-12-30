@@ -5,7 +5,7 @@ export default class Tags extends Component {
 
     render() {
         return (
-            <div>
+            <section>
                 What are you interested in?
                 <ul>
                     <li onClick={() => this.props.onEverythingClick()}>Everything</li>
@@ -18,7 +18,7 @@ export default class Tags extends Component {
                         />
                     )}
                 </ul>
-            </div>
+            </section>
         );
     }
 
@@ -30,7 +30,7 @@ Tags.propTypes = {
     onTagClick: PropTypes.func.isRequired,
     tags: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
-        text: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
         selected: PropTypes.bool.isRequired
     }).isRequired).isRequired
 };

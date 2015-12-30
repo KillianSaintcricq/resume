@@ -10,7 +10,7 @@ export default class Tag extends Component {
                     color: this.props.selected ? 'red' : 'black'
                 }}
             >
-                {this.props.text}
+                {this.props.title}
             </li>
         );
     }
@@ -19,6 +19,6 @@ export default class Tag extends Component {
 
 Tag.propTypes = {
     id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired
 };

@@ -2,11 +2,13 @@ import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux'
 import Tags from '../components/Tags.jsx';
 import { selectAll, selectNone, selectTag } from '../actions/tags';
+import Skills from '../components/Skills.jsx';
+import { voteForSkill } from '../actions/skills';
 
 class App extends Component {
 
     render() {
-        const {dispatch, tags} = this.props;
+        const {dispatch, tags, skills} = this.props;
         return (
             <div>
                 App
@@ -14,7 +16,11 @@ class App extends Component {
                     tags={tags}
                     onEverythingClick={() => dispatch(selectAll())}
                     onNothingClick={() => dispatch(selectNone())}
-                    onTagClick={(index) => dispatch(selectTag(index))}
+                    onTagClick={(id) => dispatch(selectTag(id))}
+                />
+                <Skills
+                    skills={skills}
+                    onSkillVoteClick={(id) => dispatch(voteForSkill(id))}
                 />
             </div>
         );
@@ -23,13 +29,15 @@ class App extends Component {
 }
 
 App.propTypes = {
-    tags: PropTypes.array.isRequired
+    tags: PropTypes.array.isRequired,
+    skills: PropTypes.array.isRequired
 };
 
-function mapStateToProps(state) {
+function select(state) {
     return {
-        tags: state.tags
+        tags: state.tags,
+        skills: state.skills
     }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(select)(App);

@@ -1,8 +1,8 @@
 import {SELECT_ALL_TAGS, SELECT_NO_TAGS, SELECT_TAG} from '../constants/ActionTypes';
 
 const initialState = [
-    {id: 1, text: 'React', selected: true},
-    {id: 2, text: 'Angular', selected: false}
+    {id: 1, title: 'React', selected: true},
+    {id: 2, title: 'Angular', selected: false}
 ];
 
 export default function tags(state = initialState, action) {
@@ -19,9 +19,8 @@ export default function tags(state = initialState, action) {
             });
         case SELECT_TAG:
             return state.map((tag) => {
-               return tag.id === action.id ?
-                   Object.assign({}, tag, {selected: !tag.selected}) :
-                   tag;
+                if (tag.id === action.id) Object.assign({}, tag, {selected: !tag.selected});
+                return tag;
             });
         default:
             return state;
