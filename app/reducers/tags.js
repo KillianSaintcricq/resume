@@ -19,7 +19,7 @@ export default function tags(state = initialState, action) {
             });
         case SELECT_TAG:
             return state.map((tag) => {
-                if (tag.id === action.id) Object.assign({}, tag, {selected: !tag.selected});
+                if (tag.id === action.id) return Object.assign({}, tag, {selected: !tag.selected});
                 return tag;
             });
         default:
