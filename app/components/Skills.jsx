@@ -4,15 +4,16 @@ import Skill from './Skill.jsx';
 export default class Skills extends Component {
 
     render() {
+        const { skills, voteForSkill } = this.props;
         return (
             <section>
                 Skills
                 <ul>
-                    {this.props.skills.map((skill) =>
+                    {skills.map((skill) =>
                         <Skill
                             {...skill}
                             key={skill.id}
-                            onVoteClick={() => this.props.onSkillVoteClick(skill.id)}
+                            onVoteClick={() => voteForSkill(skill.id)}
                         />
                     )}
                 </ul>
@@ -23,7 +24,7 @@ export default class Skills extends Component {
 }
 
 Skills.propTypes = {
-    onSkillVoteClick: PropTypes.func.isRequired,
+    voteForSkill: PropTypes.func.isRequired,
     skills: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,

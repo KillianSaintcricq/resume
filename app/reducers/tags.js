@@ -1,8 +1,8 @@
-import {SELECT_ALL_TAGS, SELECT_NO_TAGS, SELECT_TAG} from '../constants/ActionTypes';
+import {SELECT_ALL_TAGS, DESELECT_ALL_TAGS, SELECT_TAG} from '../constants/ActionTypes';
 
 const initialState = [
-    {id: 1, title: 'React', selected: true},
-    {id: 2, title: 'Angular', selected: false}
+    {id: 1, title: 'react', selected: true},
+    {id: 2, title: 'angular', selected: false}
 ];
 
 export default function tags(state = initialState, action) {
@@ -12,7 +12,7 @@ export default function tags(state = initialState, action) {
                 tag.selected = true;
                 return tag;
             });
-        case SELECT_NO_TAGS:
+        case DESELECT_ALL_TAGS:
             return state.map((tag) => {
                 tag.selected = false;
                 return tag;

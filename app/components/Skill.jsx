@@ -19,4 +19,4 @@ Skill.propTypes = {
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired
-}
+};

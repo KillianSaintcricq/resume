@@ -4,18 +4,20 @@ import Tag from './Tag.jsx';
 export default class Tags extends Component {
 
     render() {
+        const { tags, selectTag, selectAll, deselectAll } = this.props;
         return (
             <section>
                 What are you interested in?
                 <ul>
-                    <li onClick={() => this.props.onEverythingClick()}>Everything</li>
-                    <li onClick={() => this.props.onNothingClick()}>Nothing</li>
-                    {this.props.tags.map((tag) =>
-                        <Tag
-                            {...tag}
-                            key={tag.id}
-                            onClick={() => this.props.onTagClick(tag.id)}
-                        />
+                    <li onClick={() => selectAll()}>Everything</li>
+                    <li onClick={() => deselectAll()}>Nothing</li>
+                    {tags.map(
+                        (tag) =>
+                            <Tag
+                                {...tag}
+                                key={tag.id}
+                                onClick={() => selectTag(tag.id)}
+                            />
                     )}
                 </ul>
             </section>
@@ -25,9 +27,9 @@ export default class Tags extends Component {
 }
 
 Tags.propTypes = {
-    onEverythingClick: PropTypes.func.isRequired,
-    onNothingClick: PropTypes.func.isRequired,
-    onTagClick: PropTypes.func.isRequired,
+    selectAll: PropTypes.func.isRequired,
+    deselectAll: PropTypes.func.isRequired,
+    selectTag: PropTypes.func.isRequired,
     tags: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,

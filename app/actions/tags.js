@@ -19,8 +19,8 @@ export function selectAll() {
 
 /**
  * Creates an action that lets users deselect all tags.
- * @returns {{type: SELECT_NO_TAGS}}
+ * @returns {{type: DESELECT_ALL_TAGS}}
  */
-export function selectNone() {
-    return {type: types.SELECT_NO_TAGS};
+export function deselectAll() {
+    return {type: types.DESELECT_ALL_TAGS};
 }
