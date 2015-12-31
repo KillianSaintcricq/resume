@@ -1,23 +1,32 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import Tags from '../components/Tags.jsx';
-import { selectAll, deselectAll, selectTag } from '../actions/tags';
-import * as TagActions from '../actions/tags';
+import { selectAll, deselectAll, selectTag, fetchTags } from '../actions/tags';
 import Skills from '../components/Skills.jsx';
-import { voteForSkill } from '../actions/skills';
-import * as SkillActions from '../actions/skills';
+import { voteForSkill, fetchSkills } from '../actions/skills';
 
 class App extends Component {
 
+    componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(fetchTags());
+        dispatch(fetchSkills());
+    }
+
     render() {
-        const {tags, tagActions, skills, skillActions} = this.props;
+        const {dispatch, tags, skills} = this.props;
         return (
             <div>
-                App
+                App <br />
                 <hr />
-                <Tags tags={tags} {...tagActions} />
-                <Skills skills={skills} {...skillActions} />
+                <Tags
+                    tags={tags.values}
+                    onTagClick={(id) => dispatch(selectTag(id))}
+                    onEverythingClick={() => dispatch(selectAll())}
+                    onNothingClick={() => dispatch(deselectAll())} />
+                <Skills
+                    skills={skills.values}
+                    onSkillVoteButtonClick={(id) => dispatch(voteForSkill(id))} />
             </div>
         );
     }
@@ -25,10 +34,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-    tags: PropTypes.array.isRequired,
-    tagActions: PropTypes.object.isRequired,
-    skills: PropTypes.array.isRequired,
-    skillActions: PropTypes.object.isRequired,
+    tags: PropTypes.object.isRequired,
+    skills: PropTypes.object.isRequired
 };
 
 /**
@@ -57,23 +64,10 @@ function getSkills(skills, tags) {
 function mapStateToProps(state) {
     return {
         tags: state.tags,
-        skills: getSkills(state.skills, state.tags)
+        skills: Object.assign({}, state.skills, {
+            values: getSkills(state.skills.values, state.tags.values)
+        })
     }
 }
 
-/**
- * Gets actions so we don't have to carry about calling dispatch method.
- * @param dispatch
- * @returns {{tagActions: *, skillActions: *}}
- */
-function mapDispatchToProps(dispatch) {
-    return {
-        tagActions: bindActionCreators(TagActions, dispatch),
-        skillActions: bindActionCreators(SkillActions, dispatch)
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
+export default connect(mapStateToProps)(App);

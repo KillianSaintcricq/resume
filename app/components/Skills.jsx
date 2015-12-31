@@ -4,7 +4,7 @@ import Skill from './Skill.jsx';
 export default class Skills extends Component {
 
     render() {
-        const { skills, voteForSkill } = this.props;
+        const { skills, onSkillVoteButtonClick } = this.props;
         return (
             <section>
                 Skills
@@ -13,7 +13,7 @@ export default class Skills extends Component {
                         <Skill
                             {...skill}
                             key={skill.id}
-                            onVoteClick={() => voteForSkill(skill.id)}
+                            onVoteClick={() => onSkillVoteButtonClick(skill.id)}
                         />
                     )}
                 </ul>
@@ -24,7 +24,7 @@ export default class Skills extends Component {
 }
 
 Skills.propTypes = {
-    voteForSkill: PropTypes.func.isRequired,
+    onSkillVoteButtonClick: PropTypes.func.isRequired,
     skills: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,

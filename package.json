@@ -14,10 +14,12 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.1.2",
+    "isomorphic-fetch": "^2.2.0",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-redux": "^4.0.0",
-    "redux": "^3.0.0"
+    "redux": "^3.0.0",
+    "redux-thunk": "^1.0.3"
   },
   "devDependencies": {
     "babel-core": "^5.6.18",
@@ -26,8 +28,10 @@
     "expect": "^1.13.4",
     "express": "^4.13.3",
     "mocha": "^2.3.4",
+    "nock": "^3.6.0",
     "raw-loader": "^0.5.1",
     "react-transform-hmr": "^1.0.0",
+    "redux-mock-store": "0.0.4",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.11",
     "webpack-dev-middleware": "^1.2.0",

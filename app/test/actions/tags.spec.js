@@ -1,6 +1,12 @@
 import expect from 'expect';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import nock from 'nock';
 import * as actions from '../../actions/tags';
 import * as types from '../../constants/ActionTypes';
+
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 describe('tag actions', () => {
 
@@ -21,6 +27,34 @@ describe('tag actions', () => {
         expect(actions.deselectAll()).toEqual({
             type: types.DESELECT_ALL_TAGS
         });
+    });
+
+});
+
+describe('async tag actions', () => {
+
+    afterEach(() => {
+        nock.cleanAll();
+    });
+
+    it('creates FETCH_TAGS_SUCCESS when fetching tags has been done', (done) => {
+        const response = [
+            { id: 1, title: 'javascript' }, { id: 2, title: 'react' }
+        ];
+
+        nock('http://localhost:3001/').get('/api/tags/').reply(200, response);
+
+        const initialState = {
+            isFetching: false,
+            values: []
+        };
+        const expectedActions = [
+            {type: types.FETCH_TAGS_REQUEST},
+            {type: types.FETCH_TAGS_SUCCESS, tags: response}
+        ];
+        const store = mockStore(initialState, expectedActions, done);
+
+        store.dispatch(actions.fetchTags());
     });
 
 });

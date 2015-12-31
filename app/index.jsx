@@ -9,8 +9,8 @@ import * as actions from './actions/tags';
 const store = configureStore();
 
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
 );
