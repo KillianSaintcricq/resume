@@ -50,7 +50,7 @@ function getSkills(skills, tags) {
 }
 
 /**
- * Select
+ * Gets props regarding the current state.
  * @param state
  * @returns {{tags: (*|Array), skills: *}}
  */
@@ -61,6 +61,11 @@ function mapStateToProps(state) {
     }
 }
 
+/**
+ * Gets actions so we don't have to carry about calling dispatch method.
+ * @param dispatch
+ * @returns {{tagActions: *, skillActions: *}}
+ */
 function mapDispatchToProps(dispatch) {
     return {
         tagActions: bindActionCreators(TagActions, dispatch),
