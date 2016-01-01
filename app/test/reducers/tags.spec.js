@@ -6,7 +6,10 @@ describe('tags reducer', () => {
 
     it('should return the initial state', () => {
         expect(
-            reducer(undefined, {})
+            reducer(
+                undefined,
+                {}
+            )
         ).toEqual(
             {
                 isFetching: false,
@@ -202,21 +205,23 @@ describe('tags reducer', () => {
                     type: types.FETCH_TAGS_REQUEST
                 }
             )
-        ).toEqual({
-            isFetching: true,
-            values: [
-                {
-                    id: 1,
-                    title: 'javascript',
-                    selected: false
-                },
-                {
-                    id: 5,
-                    title: 'java',
-                    selected: true
-                }
-            ]
-        });
+        ).toEqual(
+            {
+                isFetching: true,
+                values: [
+                    {
+                        id: 1,
+                        title: 'javascript',
+                        selected: false
+                    },
+                    {
+                        id: 5,
+                        title: 'java',
+                        selected: true
+                    }
+                ]
+            }
+        );
     });
 
     it('should handle FETCH_TAGS_SUCCESS', () => {
@@ -281,10 +286,12 @@ describe('tags reducer', () => {
                     type: types.FETCH_TAGS_FAILURE
                 }
             )
-        ).toEqual({
-            isFetching: false,
-            values: []
-        });
+        ).toEqual(
+            {
+                isFetching: false,
+                values: []
+            }
+        );
     });
 
 });
