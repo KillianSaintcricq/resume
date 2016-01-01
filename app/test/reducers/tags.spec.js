@@ -246,6 +246,10 @@ describe('tags reducer', () => {
                     type: types.FETCH_TAGS_SUCCESS,
                     tags: [
                         {
+                            id: 1,
+                            title: 'javascript'
+                        },
+                        {
                             id: 4,
                             title: 'uml'
                         }
@@ -256,9 +260,14 @@ describe('tags reducer', () => {
             isFetching: false,
             values: [
                 {
+                    id: 1,
+                    title: 'javascript',
+                    selected: true
+                },
+                {
                     id: 4,
                     title: 'uml',
-                    selected: false
+                    selected: true
                 }
             ]
         });

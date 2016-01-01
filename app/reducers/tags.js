@@ -26,7 +26,7 @@ export default function tags(state = initialState, action) {
                 values: action.tags.map(tag => {
                     return {
                         ...tag,
-                        selected: false
+                        selected: true
                     };
                 })
             };

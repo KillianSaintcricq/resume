@@ -36,8 +36,14 @@ class App extends Component {
 }
 
 App.propTypes = {
-    tags: PropTypes.object.isRequired,
-    skills: PropTypes.object.isRequired
+    tags: PropTypes.shape({
+        isFetching: PropTypes.bool.isRequired,
+        values: PropTypes.array.isRequired
+    }).isRequired,
+    skills: PropTypes.shape({
+        isFetching: PropTypes.bool.isRequired,
+        values: PropTypes.array.isRequired
+    }).isRequired
 };
 
 /**
