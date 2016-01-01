@@ -15,49 +15,8 @@ describe('tags reducer', () => {
         );
     });
 
-    it('should handle SELECT_TAG (set selected from false to true)', () => {
-        expect(
-            reducer(
-                {
-                    isFetching: false,
-                    values: [
-                        {
-                            id: 1,
-                            title: 'javascript',
-                            selected: false
-                        },
-                        {
-                            id: 3,
-                            title: 'react',
-                            selected: true
-                        }
-                    ]
-                },
-                {
-                    type: types.SELECT_TAG,
-                    id: 1
-                }
-            )
-        ).toEqual(
-            {
-                isFetching: false,
-                values: [
-                    {
-                        id: 1,
-                        title: 'javascript',
-                        selected: true
-                    },
-                    {
-                        id: 3,
-                        title: 'react',
-                        selected: true
-                    }
-                ]
-            }
-        );
-    });
-
-    it('should handle SELECT_TAG (set selected from true to false)', () => {
+    it('should handle SELECT_TAG', () => {
+        // Select tag that was selected
         expect(
             reducer(
                 {
@@ -93,6 +52,46 @@ describe('tags reducer', () => {
                         id: 3,
                         title: 'react',
                         selected: false
+                    }
+                ]
+            }
+        );
+        // Select a tag that was not selected
+        expect(
+            reducer(
+                {
+                    isFetching: false,
+                    values: [
+                        {
+                            id: 1,
+                            title: 'javascript',
+                            selected: false
+                        },
+                        {
+                            id: 3,
+                            title: 'react',
+                            selected: true
+                        }
+                    ]
+                },
+                {
+                    type: types.SELECT_TAG,
+                    id: 1
+                }
+            )
+        ).toEqual(
+            {
+                isFetching: false,
+                values: [
+                    {
+                        id: 1,
+                        title: 'javascript',
+                        selected: true
+                    },
+                    {
+                        id: 3,
+                        title: 'react',
+                        selected: true
                     }
                 ]
             }
@@ -159,7 +158,7 @@ describe('tags reducer', () => {
                     ]
                 },
                 {
-                    type: types.DESELECT_ALL_TAGS,
+                    type: types.DESELECT_ALL_TAGS
                 }
             )
         ).toEqual(
@@ -179,6 +178,113 @@ describe('tags reducer', () => {
                 ]
             }
         );
+    });
+
+    it('should handle FETCH_TAGS_REQUEST', () => {
+        expect(
+            reducer(
+                {
+                    isFetching: false,
+                    values: [
+                        {
+                            id: 1,
+                            title: 'javascript',
+                            selected: false
+                        },
+                        {
+                            id: 5,
+                            title: 'java',
+                            selected: true
+                        }
+                    ]
+                },
+                {
+                    type: types.FETCH_TAGS_REQUEST
+                }
+            )
+        ).toEqual({
+            isFetching: true,
+            values: [
+                {
+                    id: 1,
+                    title: 'javascript',
+                    selected: false
+                },
+                {
+                    id: 5,
+                    title: 'java',
+                    selected: true
+                }
+            ]
+        });
+    });
+
+    it('should handle FETCH_TAGS_SUCCESS', () => {
+        expect(
+            reducer(
+                {
+                    isFetching: true,
+                    values: [
+                        {
+                            id: 1,
+                            title: 'javascript',
+                            selected: false
+                        },
+                        {
+                            id: 5,
+                            title: 'java',
+                            selected: true
+                        }
+                    ]
+                },
+                {
+                    type: types.FETCH_TAGS_SUCCESS,
+                    tags: [
+                        {
+                            id: 4,
+                            title: 'uml'
+                        }
+                    ]
+                }
+            )
+        ).toEqual({
+            isFetching: false,
+            values: [
+                {
+                    id: 4,
+                    title: 'uml',
+                    selected: false
+                }
+            ]
+        });
+    });
+
+    it('should handle FETCH_TAGS_FAILURE', () => {
+        expect(
+            reducer(
+                {
+                    isFetching: false,
+                    values: [
+                        {
+                            id: 1,
+                            title: 'javascript',
+                            selected: false
+                        },
+                        {
+                            id: 5,
+                            title: 'java',
+                            selected: true
+                        }
+                    ]
+                },
+                {
+                    type: types.FETCH_TAGS_FAILURE
+                }
+            )
+        ).toEqual({
+            isFetching: false,
+            values: []
+        });
     });
 
 });
