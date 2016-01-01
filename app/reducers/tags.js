@@ -15,42 +15,58 @@ const initialState = {
 export default function tags(state = initialState, action) {
     switch (action.type) {
         case FETCH_TAGS_REQUEST:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 isFetching: true
-            });
+            };
         case FETCH_TAGS_SUCCESS:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 isFetching: false,
-                values: action.tags.map(tag => Object.assign({}, tag, {
-                    selected: false
-                }))
-            });
+                values: action.tags.map(tag => {
+                    return {
+                        ...tag,
+                        selected: false
+                    };
+                })
+            };
         case FETCH_TAGS_FAILURE:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 isFetching: false,
                 values: []
-            });
+            };
         case SELECT_ALL_TAGS:
-            return Object.assign({}, state, {
-                values: state.values.map((tag) => {
-                    tag.selected = true;
-                    return tag;
+            return {
+                ...state,
+                values: state.values.map(tag => {
+                    return {
+                        ...tag,
+                        selected: true
+                    };
                 })
-            });
+            };
         case DESELECT_ALL_TAGS:
-            return Object.assign({}, state, {
-                values: state.values.map((tag) => {
-                    tag.selected = false;
-                    return tag;
+            return {
+                ...state,
+                values: state.values.map(tag => {
+                    return {
+                        ...tag,
+                        selected: false
+                    };
                 })
-            });
+            };
         case SELECT_TAG:
-            return Object.assign({}, state, {
-                values: state.values.map((tag) => {
-                    if (tag.id === action.id) return Object.assign({}, tag, {selected: !tag.selected});
-                    return tag;
+            return {
+                ...state,
+                values: state.values.map(tag => {
+                    return {
+                        ...tag,
+                        // If it is currently the tag to select, we have to toggle its selected attribuet
+                        selected: tag.id === action.id ? !tag.selected : tag.selected
+                    };
                 })
-            });
+            };
         default:
             return state;
     }

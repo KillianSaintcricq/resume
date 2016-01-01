@@ -14,7 +14,7 @@ class App extends Component {
     }
 
     render() {
-        const {dispatch, tags, skills} = this.props;
+        const { dispatch, tags, skills } = this.props;
         return (
             <div>
                 App <br />
@@ -23,10 +23,12 @@ class App extends Component {
                     tags={tags.values}
                     onTagClick={(id) => dispatch(selectTag(id))}
                     onEverythingClick={() => dispatch(selectAll())}
-                    onNothingClick={() => dispatch(deselectAll())} />
+                    onNothingClick={() => dispatch(deselectAll())}
+                />
                 <Skills
                     skills={skills.values}
-                    onSkillVoteButtonClick={(id) => dispatch(voteForSkill(id))} />
+                    onSkillVoteButtonClick={(id) => dispatch(voteForSkill(id))}
+                />
             </div>
         );
     }
