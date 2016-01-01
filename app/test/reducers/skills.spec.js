@@ -1,5 +1,5 @@
 import expect from 'expect';
-import reducer from '../../reducers/skills';
+import reducer from './../../reducers/skills';
 import * as types from '../../constants/ActionTypes';
 
 describe('skills reducer', () => {

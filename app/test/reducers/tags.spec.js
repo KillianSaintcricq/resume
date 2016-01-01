@@ -1,5 +1,5 @@
 import expect from 'expect';
-import reducer from '../../reducers/tags';
+import reducer from './../../reducers/tags';
 import * as types from '../../constants/ActionTypes';
 
 describe('tags reducer', () => {
