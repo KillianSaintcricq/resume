@@ -30,8 +30,6 @@ const createDeepEqualSelector = createSelectorCreator(
 export const visibleSkillsSelector = createDeepEqualSelector(
     [tagsSelector, skillsSelector],
     (tags, skills) => {
-        console.log(tags);
-        console.log(skills);
         return {
             skills: {
                 ...skills,
