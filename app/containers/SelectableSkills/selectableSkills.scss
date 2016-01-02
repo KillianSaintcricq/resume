@@ -1,3 +1,21 @@
+@import '../../styles/_colors';
+
 .selectable-skills {
-  background-color: #eeeeee;
+
+  .container {
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    .left {
+      flex: 2;
+    }
+
+    .right {
+      flex: 5;
+      margin-left: 10px;
+      padding-left: 10px;
+    }
+  }
+
 }

@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 /**
- * Gets the skills having at least one of their tags selected in the list of tags.
+ * Gets the skills having their tags selected in the list of tags.
  * @param skills
  * @param tags
  * @returns {*}
@@ -12,9 +12,9 @@ function selectSkills(skills, tags) {
     // Gets the skills associated with those tags
     return skills.filter(skill => {
         for (let tag of skill.tags) {
-            if (selectedTags.indexOf(tag) !== -1) return true;
+            if (selectedTags.indexOf(tag) === -1) return false;
         }
-        return false;
+        return true;
     });
 }
 

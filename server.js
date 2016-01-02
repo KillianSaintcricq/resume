@@ -19,32 +19,69 @@ app.get("/api/skills", function (req, res) {
         {
             "id": 1,
             "title": "Javascript",
-            "text": "I did some Javascript yep...",
             "votes": 9,
             "tags": [
-                "javascript",
-                "front-end"
+                "programming languages"
             ]
         },
         {
             "id": 2,
             "title": "React",
-            "text": "React is used right here!",
             "votes": 10,
             "tags": [
-                "javascript",
-                "react",
-                "front-end"
+                "front-end",
+                "frameworks"
             ]
         },
         {
             "id": 3,
             "title": "Java",
-            "text": "I used Java a lot in Capgemini and at school.",
             "votes": 2,
             "tags": [
-                "java",
-                "back-end"
+                "back-end",
+                "programming languages"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Laravel",
+            "votes": 3,
+            "tags": [
+                "back-end",
+                "frameworks"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Versionning tools",
+            "votes": 6,
+            "tags": [
+                "software engineering"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "WebStorm",
+            "votes": 6,
+            "tags": [
+                "ide"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Jasmine",
+            "votes": 6,
+            "tags": [
+                "front-end",
+                "tests"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "JUnit",
+            "votes": 6,
+            "tags": [
+                "tests"
             ]
         }
     ]);
@@ -52,8 +89,14 @@ app.get("/api/skills", function (req, res) {
 
 app.get('/api/tags', function (req, res) {
     res.json([
-        {id: 1, title: 'react'},
-        {id: 2, title: 'angular'}
+        {id: 1, title: 'front-end'},
+        {id: 2, title: 'back-end'},
+        {id: 3, title: 'project management'},
+        {id: 4, title: 'software engineering'},
+        {id: 5, title: 'frameworks'},
+        {id: 6, title: 'ide'},
+        {id: 7, title: 'programming languages'},
+        {id: 8, title: 'tests'}
     ]);
 });
 

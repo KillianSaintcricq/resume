@@ -1,6 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+@import '../../styles/_screens';
+
+body {
+  font-family: 'Roboto';
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+.page-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .container {
   width: 70%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  @media (max-width: $s-screen-max) {
+    width: 90%
+  }
+}
+
+h2 {
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 400;
 }

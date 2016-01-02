@@ -5,12 +5,24 @@ import './skill.scss';
 export default class Skill extends Component {
 
     render() {
+        const { title, votes, tags, onVoteClick } = this.props;
         return (
-            <li>
-                <div>{this.props.title} <span>({this.props.votes})</span></div>
-                <p>{this.props.text}</p>
-                <button onClick={this.props.onVoteClick}>Vote!</button>
-            </li>
+            <span className="skill">
+                <div className="skill-container">
+                    <h3 className="title">{title}</h3>
+                    <div className="skill-tags-container">
+                        {tags.map(
+                            (tag, index) =>
+                                <span className="skill-tags" key={index}>
+                                    {tag}{' '}
+                                </span>
+                        )}
+                    </div>
+                    <div className="skill-relevance-container">
+                        <a href="#" className="vote" onClick={onVoteClick}>Like</a>{' '}({votes})
+                    </div>
+                </div>
+            </span>
         );
     }
 
@@ -19,6 +31,5 @@ export default class Skill extends Component {
 Skill.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    votes: PropTypes.number.isRequired
+    tags: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
 };

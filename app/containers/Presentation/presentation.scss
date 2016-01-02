@@ -1,0 +1,15 @@
+@import '../../styles/_colors';
+
+.presentation {
+
+  background-color: $primary-color;
+  color: $light-text-color;
+
+  .container {
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+}

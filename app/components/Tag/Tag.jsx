@@ -1,18 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 import './tag.scss';
 
 export default class Tag extends Component {
 
     render() {
+        const { title, onClick } = this.props;
+        const classes = classNames('tag', { active: this.props.selected });
         return (
-            <li
-                onClick={this.props.onClick}
-                style={{
-                    color: this.props.selected ? 'red' : 'black'
-                }}
-            >
-                {this.props.title}
+            <li className={classes} onClick={onClick}>
+                {title}
             </li>
         );
     }
@@ -20,7 +18,6 @@ export default class Tag extends Component {
 }
 
 Tag.propTypes = {
-    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired
 };
