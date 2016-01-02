@@ -12,6 +12,7 @@
 
   &:hover {
     cursor: pointer;
+    background-color: $primary-color-lighten;
   }
 
   &.active {

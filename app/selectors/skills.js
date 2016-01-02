@@ -1,4 +1,5 @@
-import { createSelector } from 'reselect';
+import { createSelectorCreator, defaultMemoize } from 'reselect';
+import isEqual from 'deep-equal';
 
 /**
  * Gets the skills having their tags selected in the list of tags.
@@ -21,9 +22,16 @@ function selectSkills(skills, tags) {
 const tagsSelector = state => state.tags;
 const skillsSelector = state => state.skills;
 
-export const visibleSkillsSelector = createSelector(
+const createDeepEqualSelector = createSelectorCreator(
+    defaultMemoize,
+    isEqual
+);
+
+export const visibleSkillsSelector = createDeepEqualSelector(
     [tagsSelector, skillsSelector],
     (tags, skills) => {
+        console.log(tags);
+        console.log(skills);
         return {
             skills: {
                 ...skills,

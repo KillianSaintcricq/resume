@@ -14,8 +14,9 @@ export default class Skills extends Component {
                 <ReactCSSTransitionGroup
                     className="values"
                     transitionName="skills-items"
-                    transitionEnterTimeout={1000}
-                    transitionLeaveTimeout={1000}
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={500}
+                    transitionAppearTimeout={500}
                     transitionAppear={true}
                 >
                     {skills.map(

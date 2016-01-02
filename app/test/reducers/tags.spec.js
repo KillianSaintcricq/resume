@@ -262,12 +262,12 @@ describe('tags reducer', () => {
                 {
                     id: 1,
                     title: 'javascript',
-                    selected: true
+                    selected: false
                 },
                 {
                     id: 4,
                     title: 'uml',
-                    selected: true
+                    selected: false
                 }
             ]
         });
