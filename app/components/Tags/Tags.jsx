@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Tag from './Tag.jsx';
+import Tag from './../Tag/Tag.jsx';
+
+import './tags.scss';
 
 export default class Tags extends Component {
 

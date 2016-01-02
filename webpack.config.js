@@ -21,10 +21,10 @@ module.exports = {
     loaders: [{
       test: /\.js(x)?$/,
       loaders: [ 'babel' ],
-      exclude: /node_modules/,
+      exclude: /node_modules/
     }, {
-      test: /\.css?$/,
-      loaders: [ 'style', 'raw' ],
+      test: /\.scss?$/,
+      loaders: [ 'style', 'css', 'sass' ]
     }]
   }
 };

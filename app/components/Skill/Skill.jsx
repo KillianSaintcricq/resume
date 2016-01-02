@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import './skill.scss';
+
 export default class Skill extends Component {
 
     render() {

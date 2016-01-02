@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Skill from './Skill.jsx';
+import Skill from './../Skill/Skill.jsx';
+
+import './skills.scss'
 
 export default class Skills extends Component {
 
