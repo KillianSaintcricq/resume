@@ -4,8 +4,13 @@ import Tags from '../components/Tags.jsx';
 import { selectAll, deselectAll, selectTag, fetchTags } from '../actions/tags';
 import Skills from '../components/Skills.jsx';
 import { voteForSkill, fetchSkills } from '../actions/skills';
+import { createSelector } from 'reselect';
 
 class SelectableSkills extends Component {
+
+    constructor(props) {
+        super(props);
+    }
 
     componentDidMount() {
         const { dispatch } = this.props;
@@ -50,7 +55,7 @@ SelectableSkills.propTypes = {
  * @param tags
  * @returns {*}
  */
-function getSkills(skills, tags) {
+function selectSkills(skills, tags) {
     // Gets the tags title currently selected
     const selectedTags = tags.filter(tag => tag.selected).map(tag => tag.title);
     // Gets the skills associated with those tags
@@ -62,19 +67,19 @@ function getSkills(skills, tags) {
     });
 }
 
-/**
- * Gets props regarding the current state.
- * @param state
- * @returns {{tags: (*|Array), skills: *}}
- */
-function mapStateToProps(state) {
-    return {
-        tags: state.tags,
-        skills: {
-            ...state.skills,
-            values: getSkills(state.skills.values, state.tags.values)
+const tagsSelector = state => state.tags;
+const skillsSelector = state => state.skills;
+const visibleSkillsSelector = createSelector(
+    [tagsSelector, skillsSelector],
+    (tags, skills) => {
+        return {
+            skills: {
+                ...skills,
+                values: selectSkills(skills.values, tags.values)
+            },
+            tags
         }
     }
-}
+);
 
-export default connect(mapStateToProps)(SelectableSkills);
+export default connect(visibleSkillsSelector)(SelectableSkills);
