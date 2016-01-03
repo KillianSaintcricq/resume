@@ -101,6 +101,68 @@ describe('tags reducer', () => {
         );
     });
 
+    it('should handle SELECT_TAGS', () => {
+        expect(
+            reducer(
+                {
+                    isFetching: false,
+                    values: [
+                        {
+                            id: 1,
+                            title: 'javascript',
+                            selected: false
+                        },
+                        {
+                            id: 3,
+                            title: 'react',
+                            selected: true
+                        },
+                        {
+                            id: 4,
+                            title: 'laravel',
+                            selected: true
+                        },
+                        {
+                            id: 8,
+                            title: 'java',
+                            selected: true
+                        }
+                    ]
+                },
+                {
+                    type: types.SELECT_TAGS,
+                    ids: [1, 4, 8]
+                }
+            )
+        ).toEqual(
+            {
+                isFetching: false,
+                values: [
+                    {
+                        id: 1,
+                        title: 'javascript',
+                        selected: true
+                    },
+                    {
+                        id: 3,
+                        title: 'react',
+                        selected: true
+                    },
+                    {
+                        id: 4,
+                        title: 'laravel',
+                        selected: false
+                    },
+                    {
+                        id: 8,
+                        title: 'java',
+                        selected: false
+                    }
+                ]
+            }
+        );
+    });
+
     it('should handle SELECT_ALL_TAGS', () => {
         expect(
             reducer(

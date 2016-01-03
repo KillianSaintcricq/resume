@@ -17,6 +17,13 @@ describe('tag actions', () => {
         });
     });
 
+    it('selectRandom should create SELECT_TAGS action', () => {
+        expect(actions.selectTags([3, 2, 6])).toEqual({
+            type: types.SELECT_TAGS,
+            ids: [3, 2, 6]
+        });
+    });
+
     it('selectAll should create SELECT_ALL_TAGS action', () => {
         expect(actions.selectAll()).toEqual({
             type: types.SELECT_ALL_TAGS

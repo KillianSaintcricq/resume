@@ -1,9 +1,9 @@
 import * as types from '../constants/ActionTypes';
 
 /**
- * Creates an action that lets the application know the user has selected a tag.
+ * Creates an action that lets the application know a tag has been selected.
  * @param id
- * @returns {{type: SELECT_TAG, id: *}}
+ * @returns {{type: SELECT_TAG, id: number}}
  */
 export function selectTag(id) {
     return {
@@ -13,7 +13,7 @@ export function selectTag(id) {
 }
 
 /**
- * Creates an action that lets the application know the user has selected all tags.
+ * Creates an action that lets the application know all tags have been selected.
  * @returns {{type: SELECT_ALL_TAGS}}
  */
 export function selectAll() {
@@ -23,7 +23,18 @@ export function selectAll() {
 }
 
 /**
- * Creates an action that lets the application know the user has deselected all tags.
+ * Creates an action that lets the application know some tags have been selected.
+ * @returns {{type: SELECT_TAGS, ids: array}}
+ */
+export function selectTags(ids) {
+    return {
+        type: types.SELECT_TAGS,
+        ids
+    };
+}
+
+/**
+ * Creates an action that lets the application know all tags have been deselected.
  * @returns {{type: DESELECT_ALL_TAGS}}
  */
 export function deselectAll() {

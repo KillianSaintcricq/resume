@@ -6,13 +6,16 @@ import './tags.scss';
 export default class Tags extends Component {
 
     render() {
-        const { tags, label, onEverythingClick, onNothingClick, onTagClick } = this.props;
+        const { tags, label, onEverythingClick, onRandomClick, onNothingClick, onTagClick } = this.props;
         return (
             <section className="tags">
                 <h2 className="label">{label}</h2>
                 <ul className="values">
                     <Tag selected={false} onClick={() => onEverythingClick()}>
                         <span className="strong">Everything</span>
+                    </Tag>
+                    <Tag selected={false} onClick={() => onRandomClick(tags.map(tag => tag.id))}>
+                        <span className="strong">Random</span>
                     </Tag>
                     <Tag selected={false} onClick={() => onNothingClick()}>
                         <span className="strong">Nothing</span>
@@ -31,6 +34,7 @@ export default class Tags extends Component {
 
 Tags.propTypes = {
     onEverythingClick: PropTypes.func.isRequired,
+    onRandomClick: PropTypes.func.isRequired,
     onNothingClick: PropTypes.func.isRequired,
     onTagClick: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,

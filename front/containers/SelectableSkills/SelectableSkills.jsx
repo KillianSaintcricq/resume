@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Tags from '../../components/Tags/Tags.jsx';
-import { selectAll, deselectAll, selectTag, fetchTags } from '../../actions/tags';
+import { selectAll, selectTags, deselectAll, selectTag, fetchTags } from '../../actions/tags';
 import Skills from '../../components/Skills/Skills.jsx';
 import { voteForSkill, fetchSkills } from '../../actions/skills';
 import { visibleSkillsSelector } from '../../selectors/skills.js';
+import { randomValues } from '../../utils/random';
 
 import './selectableSkills.scss'
 
@@ -20,6 +21,12 @@ class SelectableSkills extends Component {
         dispatch(fetchSkills());
     }
 
+    onRandomClick() {
+        const { tags, selectTags } = this.props;
+        const tagsToSelect = Math.floor((Math.random() * tags) + 1);
+
+    }
+
     render() {
         const { dispatch, tags, skills } = this.props;
         return (
@@ -31,6 +38,7 @@ class SelectableSkills extends Component {
                             tags={tags.values}
                             onTagClick={(id) => dispatch(selectTag(id))}
                             onEverythingClick={() => dispatch(selectAll())}
+                            onRandomClick={(ids) => dispatch(selectTags(randomValues(ids)))}
                             onNothingClick={() => dispatch(deselectAll())}
                         />
                     </section>

@@ -4,7 +4,8 @@ import {
     FETCH_TAGS_FAILURE,
     SELECT_ALL_TAGS, 
     DESELECT_ALL_TAGS, 
-    SELECT_TAG
+    SELECT_TAG,
+    SELECT_TAGS
 } from '../constants/ActionTypes';
 
 const initialState = {
@@ -62,9 +63,20 @@ export default function tags(state = initialState, action) {
                 values: state.values.map(tag => {
                     return {
                         ...tag,
-                        // If it is currently the tag to select, we have to toggle its selected attribuet
+                        // If it is currently the tag to select, we have to toggle its selected attribute
                         selected: tag.id === action.id ? !tag.selected : tag.selected
                     };
+                })
+            };
+        case SELECT_TAGS:
+            return {
+                ...state,
+                values: state.values.map(tag => {
+                    return {
+                        ...tag,
+                        // If the current tag has to be selected, we have to toggle its selected attribute
+                        selected: action.ids.indexOf(tag.id) === -1 ? tag.selected : !tag.selected
+                    }
                 })
             };
         default:
