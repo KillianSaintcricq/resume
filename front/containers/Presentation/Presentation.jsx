@@ -8,11 +8,18 @@ export default class App extends Component {
 
     render() {
         return (
-            <section className="page-section presentation">
+            <header className="page-section presentation">
                 <div className="container">
                     <h1 className="site-name">Killian Saint cricq</h1>
+                    <nav className="nav-wrapper">
+                        <ul className="nav-items without-bullets">
+                            <li className="nav-item">Skills</li>
+                            <li className="nav-item">Experience</li>
+                            <li className="nav-item">About</li>
+                        </ul>
+                    </nav>
                 </div>
-            </section>
+            </header>
         );
     }
 

@@ -6,10 +6,6 @@
   display: flex;
   flex-direction: column;
 
-  ul {
-    @include list-without-bullet;
-  }
-
   .values, .selectors {
     display: flex;
     flex-flow: row wrap;

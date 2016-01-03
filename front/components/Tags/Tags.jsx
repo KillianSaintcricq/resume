@@ -10,7 +10,7 @@ export default class Tags extends Component {
         return (
             <section className="tags">
                 <h2 className="label">{label}</h2>
-                <ul className="values">
+                <ul className="values without-bullets">
                     <Tag selected={false} onClick={() => onEverythingClick()}>
                         <span className="strong">Everything</span>
                     </Tag>

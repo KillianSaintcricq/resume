@@ -2,6 +2,8 @@
 @import '../../styles/_screens';
 @import '../../styles/_mixins';
 
+/* Page structure */
+
 body {
   font-family: 'Roboto';
   font-weight: 300;
@@ -25,6 +27,8 @@ body {
   }
 }
 
+/* Helper classes */
+
 .hide-on-m-and-lower {
   @include hide-on-screen-size-and-lower($m-screen-max)
 }
@@ -32,6 +36,13 @@ body {
 .hide-on-s-and-lower {
   @include hide-on-screen-size-and-lower($s-screen-max)
 }
+
+ul.without-bullets {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Titles */
 
 h1 {
   font-weight: 700;

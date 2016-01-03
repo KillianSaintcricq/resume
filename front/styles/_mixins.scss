@@ -1,8 +1,3 @@
-@mixin list-without-bullet {
-  list-style-type: none;
-  padding: 0;
-}
-
 @mixin hide-on-screen-size-and-lower($screen-size) {
   @media (max-width: $screen-size) {
     display: none !important;

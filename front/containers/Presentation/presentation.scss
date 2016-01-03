@@ -7,7 +7,28 @@
   .container {
 
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+
+    .site-name {
+      flex-grow: 1;
+    }
+
+    .nav-wrapper {
+
+      align-self: flex-end;
+
+      .nav-items {
+        display: flex;
+        flex-flow: row wrap;
+
+        .nav-item {
+          margin-right: 15px;
+          font-weight: 400;
+        }
+
+      }
+
+    }
 
   }
 
