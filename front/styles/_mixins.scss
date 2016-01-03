@@ -19,3 +19,12 @@
 @mixin bold-text {
   font-weight: 700;
 }
+
+@mixin tag($hover-background-color, $hover-text-color) {
+  transition: background-color 0.5s, color 0.5s;
+  &:hover {
+    background-color: $hover-background-color;
+    color: $hover-text-color;
+    cursor: pointer;
+  }
+}

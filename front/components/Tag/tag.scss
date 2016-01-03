@@ -1,5 +1,6 @@
 @import '../../styles/_colors';
 @import '../../styles/_screens';
+@import '../../styles/_mixins';
 
 .tag {
 
@@ -9,20 +10,15 @@
 
   text-align: center;
 
-  transition: background-color 0.5s, color 0.5s;
+  @include tag($primary-color-lighten, black);
 
   @media (max-width: $m-screen-max) {
     flex-grow: 1;
   }
 
-  &:hover {
-    cursor: pointer;
-    background-color: $primary-color-lighten;
-  }
-
   &.active {
     background-color: $primary-color;
-    color: $light-text-color;
+    color: $light-primary-color;
   }
 
 }

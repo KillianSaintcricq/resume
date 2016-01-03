@@ -1,0 +1,45 @@
+@import '../../styles/_mixins';
+@import '../../styles/_colors';
+
+
+.nav {
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+
+  .site-name {
+    flex-grow: 1;
+  }
+
+  .nav-wrapper {
+
+    align-self: center;
+    margin-right: 16px;
+
+    .nav-items {
+
+      display: flex;
+      flex-flow: row wrap;
+
+      .nav-item {
+
+        @include light-text;
+
+        .link {
+
+          text-decoration: none;
+          color: black;
+          padding: 10px 10px;
+
+          @include tag($light-secondary-color, $primary-color);
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
