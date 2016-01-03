@@ -1,9 +1,8 @@
-import expect from 'expect';
-import deepFreeze from 'deep-freeze';
 import reducer from './../../reducers/tags';
 import * as types from '../../constants/ActionTypes';
+import { createTestReducer } from './helpers';
 
-const testReducer = (stateBefore, action, stateAfter) => expect(reducer(stateBefore, action)).toEqual(stateAfter);
+const testReducer = createTestReducer(reducer);
 
 describe('tags reducer', () => {
 
@@ -40,7 +39,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.SELECT_TAG,
                 id: 3
@@ -83,7 +81,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.SELECT_TAG,
                 id: 1
@@ -138,7 +135,6 @@ describe('tags reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.SELECT_TAGS,
             ids: [1, 4, 8]
@@ -193,7 +189,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.SELECT_ALL_TAGS
             };
@@ -235,7 +230,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.SELECT_ALL_TAGS
             };
@@ -277,7 +271,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.SELECT_ALL_TAGS
             };
@@ -323,7 +316,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.DESELECT_ALL_TAGS
             };
@@ -365,7 +357,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.DESELECT_ALL_TAGS
             };
@@ -407,7 +398,6 @@ describe('tags reducer', () => {
                     }
                 ]
             };
-            deepFreeze(stateBefore);
             const action = {
                 type: types.DESELECT_ALL_TAGS
             };
@@ -451,7 +441,6 @@ describe('tags reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.FETCH_TAGS_REQUEST
         };
@@ -493,7 +482,6 @@ describe('tags reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.FETCH_TAGS_SUCCESS,
             tags: [
@@ -545,7 +533,6 @@ describe('tags reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.FETCH_TAGS_FAILURE
         };

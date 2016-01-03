@@ -1,9 +1,8 @@
-import expect from 'expect';
-import deepFreeze from 'deep-freeze';
 import reducer from './../../reducers/skills';
 import * as types from '../../constants/ActionTypes';
+import { createTestReducer } from './helpers';
 
-const testReducer = (stateBefore, action, stateAfter) => expect(reducer(stateBefore, action)).toEqual(stateAfter);
+const testReducer = createTestReducer(reducer);
 
 describe('skills reducer', () => {
 
@@ -35,7 +34,6 @@ describe('skills reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.VOTE_FOR_SKILL,
             id: 1
@@ -72,7 +70,6 @@ describe('skills reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.FETCH_SKILLS_REQUEST
         };
@@ -107,7 +104,6 @@ describe('skills reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.FETCH_SKILLS_SUCCESS,
             skills: [
@@ -152,7 +148,6 @@ describe('skills reducer', () => {
                 }
             ]
         };
-        deepFreeze(stateBefore);
         const action = {
             type: types.FETCH_SKILLS_FAILURE
         };
