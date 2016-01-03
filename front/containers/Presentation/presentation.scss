@@ -14,18 +14,14 @@
     }
 
     .nav-wrapper {
-
       align-self: flex-end;
-
       .nav-items {
         display: flex;
         flex-flow: row wrap;
-
         .nav-item {
           margin-right: 15px;
           font-weight: 400;
         }
-
       }
 
     }

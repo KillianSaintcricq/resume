@@ -4,12 +4,14 @@
 
 .skill {
 
-  margin-right: 16px;
-  margin-bottom: 16px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
+
   color: $light-text-color;
+
+  margin-right: 16px;
+  margin-bottom: 16px;
 
   &:hover {
     box-shadow: 0 2px 5px #888888;
@@ -21,22 +23,33 @@
 
   .vote {
 
-    background-color: $secondary-color;
-    color: $light-text-color;
-    padding: 5px 8px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 500;
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    background-color: $secondary-color;
+    color: $light-text-color;
+
+    padding: 5px 8px;
+    border: none;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus, &:active {
+      outline: none;
+    }
 
   }
 
   .content-container {
 
-    background-color: $secondary-color;
     flex-grow: 1;
+    background-color: $secondary-color;
 
     .title {
       margin: 0;
