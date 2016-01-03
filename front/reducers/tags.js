@@ -38,25 +38,33 @@ export default function tags(state = initialState, action) {
                 values: []
             };
         case SELECT_ALL_TAGS:
-            return {
-                ...state,
-                values: state.values.map(tag => {
-                    return {
-                        ...tag,
-                        selected: true
-                    };
-                })
-            };
+            if (state.values.some(tag => !tag.selected)) {
+                return {
+                    ...state,
+                    values: state.values.map(tag => {
+                        return {
+                            ...tag,
+                            selected: true
+                        };
+                    })
+                };
+            } else {
+                return state;
+            }
         case DESELECT_ALL_TAGS:
-            return {
-                ...state,
-                values: state.values.map(tag => {
-                    return {
-                        ...tag,
-                        selected: false
-                    };
-                })
-            };
+            if (state.values.some(tag => tag.selected)) {
+                return {
+                    ...state,
+                    values: state.values.map(tag => {
+                        return {
+                            ...tag,
+                            selected: false
+                        };
+                    })
+                };
+            } else {
+                return state;
+            }
         case SELECT_TAG:
             return {
                 ...state,

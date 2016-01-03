@@ -1,4 +1,4 @@
-import { createSelectorCreator, defaultMemoize } from 'reselect';
+import { createSelector } from 'reselect';
 import isEqual from 'deep-equal';
 
 /**
@@ -22,12 +22,7 @@ function selectSkills(skills, tags) {
 const tagsSelector = state => state.tags;
 const skillsSelector = state => state.skills;
 
-const createDeepEqualSelector = createSelectorCreator(
-    defaultMemoize,
-    isEqual
-);
-
-export const visibleSkillsSelector = createDeepEqualSelector(
+export const visibleSkillsSelector = createSelector(
     [tagsSelector, skillsSelector],
     (tags, skills) => {
         return {
