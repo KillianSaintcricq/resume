@@ -21,10 +21,17 @@ class SelectableSkills extends Component {
         dispatch(fetchSkills());
     }
 
+    componentWillReceiveProps(nextProps) {
+        const { dispatch } = this.props;
+        // If we just received the tags, we have to select randomly some of them
+        if (this.props.tags.isFetching && !nextProps.tags.values.isFetching) {
+            dispatch(selectTags(randomValues(nextProps.tags.values.map(tag => tag.id))));
+        }
+    }
+
     onRandomClick() {
         const { tags, selectTags } = this.props;
         const tagsToSelect = Math.floor((Math.random() * tags) + 1);
-
     }
 
     render() {
