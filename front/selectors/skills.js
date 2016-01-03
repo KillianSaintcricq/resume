@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import isEqual from 'deep-equal';
 
 /**
  * Gets the skills having their tags selected in the list of tags.
