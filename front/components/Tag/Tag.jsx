@@ -10,7 +10,7 @@ export default class Tag extends Component {
         const classes = classNames('tag', { active: this.props.selected });
         return (
             <li className={classes} onClick={onClick}>
-                {title}
+                {this.props.children}
             </li>
         );
     }
@@ -18,6 +18,5 @@ export default class Tag extends Component {
 }
 
 Tag.propTypes = {
-    title: PropTypes.string.isRequired,
     selected: PropTypes.bool.isRequired
 };

@@ -10,14 +10,13 @@
     @include list-without-bullet;
   }
 
-  .values {
+  .values, .selectors {
     display: flex;
     flex-flow: row wrap;
-  }
-
-  .selectors {
-    display: flex;
-    flex-flow: row wrap;
+    align-items: flex-end;
+    .strong {
+      font-weight: 500;
+    }
   }
 
 }

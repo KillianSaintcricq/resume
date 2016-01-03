@@ -7,15 +7,15 @@ import './skills.scss';
 export default class Skills extends Component {
 
     render() {
-        const { skills, label, onSkillVoteButtonClick } = this.props;
+        const { skills, onSkillVoteButtonClick } = this.props;
         return (
             <section className="skills">
-                <h2 className="label">{label}</h2>
                 <ReactCSSTransitionGroup
+                    component="section"
                     className="values"
                     transitionName="skills-items"
                     transitionEnterTimeout={500}
-                    transitionLeaveTimeout={500}
+                    transitionLeaveTimeout={400}
                     transitionAppearTimeout={500}
                     transitionAppear={true}
                 >
@@ -36,6 +36,5 @@ export default class Skills extends Component {
 
 Skills.propTypes = {
     onSkillVoteButtonClick: PropTypes.func.isRequired,
-    label: PropTypes.string.isRequired,
     skills: PropTypes.array.isRequired
 };

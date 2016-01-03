@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 @import '../../styles/_screens';
+@import '../../styles/_mixins';
 
 body {
   font-family: 'Roboto';
@@ -16,9 +17,25 @@ body {
 .container {
   width: 70%;
   margin: 0 auto;
+  @media (max-width: $m-screen-max) {
+    width: 80%;
+  }
   @media (max-width: $s-screen-max) {
     width: 90%
   }
+}
+
+.hide-on-m-and-lower {
+  @include hide-on-screen-size-and-lower($m-screen-max)
+}
+
+.hide-on-s-and-lower {
+  @include hide-on-screen-size-and-lower($s-screen-max)
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 30px;
 }
 
 h2 {

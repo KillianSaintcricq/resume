@@ -10,8 +10,7 @@ export default class App extends Component {
         return (
             <section className="page-section presentation">
                 <div className="container">
-                    <h1>Killian Saint cricq</h1>
-                    <p>Hey! This is my website :-)</p>
+                    <h1 className="site-name">Killian Saint cricq</h1>
                 </div>
             </section>
         );

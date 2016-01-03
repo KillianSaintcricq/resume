@@ -35,7 +35,7 @@ export default function skills(state = initialState, action) {
                 values: state.values.map(skill => {
                     return {
                         ...skill,
-                        votes: skill.id === action.id ? ++skill.votes : skill.votes
+                        votes: skill.id === action.id ? skill.votes + 1 : skill.votes
                     };
                 })
             };

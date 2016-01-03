@@ -25,18 +25,18 @@ class SelectableSkills extends Component {
         return (
             <section className="page-section selectable-skills">
                 <div className="container">
-                    <section className="left">
+                    <section className="tags-container">
                         <Tags
-                            label="What are you interested in?"
+                            label="What skills are you seeking?"
                             tags={tags.values}
                             onTagClick={(id) => dispatch(selectTag(id))}
                             onEverythingClick={() => dispatch(selectAll())}
                             onNothingClick={() => dispatch(deselectAll())}
                         />
                     </section>
-                    <section className="right">
+                    <section className="skills-container">
                         <Skills
-                            label="Here are the skills matching your expectations"
+                            label="Here is what I know about it!"
                             skills={skills.values}
                             onSkillVoteButtonClick={(id) => dispatch(voteForSkill(id))}
                         />

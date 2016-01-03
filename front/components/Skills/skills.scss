@@ -1,4 +1,5 @@
 @import '../../styles/_mixins';
+@import '../../styles/_screens';
 
 .skills {
 
@@ -9,21 +10,24 @@
 
     display: flex;
     flex-flow: row wrap;
-    align-items: flex-start;
     margin-top: 16px;
 
     .skills-items-enter, .skills-items-appear {
       opacity: 0;
+      transform: scale(0);
       &.skills-items-enter-active, &.skills-items-appear-active {
         opacity: 1;
-        transition: opacity 0.5s;
+        transform: scale(1);
+        transition: opacity 0.5s, transform 0.5s;
       }
     }
     .skills-items-leave {
       opacity: 1;
+      transform: scale(1);
       &.skills-items-leave-active {
         opacity: 0;
-        transition: opacity 0.5s;
+        transform: scale(0);
+        transition: opacity 0.5s, transform 0.5s;
       }
     }
 

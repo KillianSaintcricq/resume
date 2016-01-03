@@ -11,7 +11,7 @@ app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.
 app.use(webpackHotMiddleware(compiler));
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + '/app/index.html')
+    res.sendFile(__dirname + '/front/index.html')
 });
 
 app.get("/api/skills", function (req, res) {
@@ -53,18 +53,10 @@ app.get("/api/skills", function (req, res) {
         },
         {
             "id": 5,
-            "title": "Versionning tools",
+            "title": "Versioning tools (Git)",
             "votes": 6,
             "tags": [
                 "software engineering"
-            ]
-        },
-        {
-            "id": 6,
-            "title": "WebStorm",
-            "votes": 6,
-            "tags": [
-                "ide"
             ]
         },
         {
@@ -83,6 +75,72 @@ app.get("/api/skills", function (req, res) {
             "tags": [
                 "tests"
             ]
+        },
+        {
+            "id": 9,
+            "title": "Modeling (UML)",
+            "votes": 2,
+            "tags": [
+                "software engineering"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "Agile Methodologies (Scrum)",
+            "votes": 12,
+            "tags": [
+                "project management"
+            ]
+        },
+        {
+            "id": 11,
+            "title": "AngularJS",
+            "votes": 9,
+            "tags": [
+                "front-end",
+                "frameworks"
+            ]
+        },
+        {
+            "id": 12,
+            "title": "HTML5 / CSS3",
+            "votes": 15,
+            "tags": [
+                "front-end"
+            ]
+        },
+        {
+            "id": 13,
+            "title": "PHP",
+            "votes": 6,
+            "tags": [
+                "back-end",
+                "programming languages"
+            ]
+        },
+        {
+            "id": 14,
+            "title": "MongoDB",
+            "votes": 13,
+            "tags": [
+                "databases"
+            ]
+        },
+        {
+            "id": 15,
+            "title": "MySQL",
+            "votes": 1,
+            "tags": [
+                "databases"
+            ]
+        },
+        {
+            "id": 16,
+            "title": "jQuery",
+            "votes": 3,
+            "tags": [
+                "front-end"
+            ]
         }
     ]);
 });
@@ -94,9 +152,9 @@ app.get('/api/tags', function (req, res) {
         {id: 3, title: 'project management'},
         {id: 4, title: 'software engineering'},
         {id: 5, title: 'frameworks'},
-        {id: 6, title: 'ide'},
         {id: 7, title: 'programming languages'},
-        {id: 8, title: 'tests'}
+        {id: 8, title: 'tests'},
+        {id: 9, title: 'databases'}
     ]);
 });
 

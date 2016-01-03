@@ -11,13 +11,17 @@ export default class Tags extends Component {
             <section className="tags">
                 <h2 className="label">{label}</h2>
                 <ul className="values">
+                    <Tag selected={false} onClick={() => onEverythingClick()}>
+                        <span className="strong">Everything</span>
+                    </Tag>
+                    <Tag selected={false} onClick={() => onNothingClick()}>
+                        <span className="strong">Nothing</span>
+                    </Tag>
                     {tags.map(tag =>
-                        <Tag {...tag} key={tag.id} onClick={() => onTagClick(tag.id)} />
+                        <Tag selected={tag.selected} key={tag.id} onClick={() => onTagClick(tag.id)}>
+                            {tag.title}
+                        </Tag>
                     )}
-                </ul>
-                <ul className="selectors">
-                    <Tag title="Everything" selected={false} onClick={() => onEverythingClick()} />
-                    <Tag title="Nothing" selected={false} onClick={() => onNothingClick()} />
                 </ul>
             </section>
         );
