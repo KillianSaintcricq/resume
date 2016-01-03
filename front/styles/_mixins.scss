@@ -3,3 +3,19 @@
     display: none !important;
   }
 }
+
+@mixin very-light-text {
+  font-weight: 300;
+}
+
+@mixin light-text {
+  font-weight: 400;
+}
+
+@mixin normal-text {
+  font-weight: 500;
+}
+
+@mixin bold-text {
+  font-weight: 700;
+}

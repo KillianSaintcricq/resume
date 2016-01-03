@@ -5,8 +5,8 @@
 /* Page structure */
 
 body {
+  @include very-light-text;
   font-family: 'Roboto';
-  font-weight: 300;
   margin: 0;
   padding: 0;
 }
@@ -45,14 +45,14 @@ ul.without-bullets {
 /* Titles */
 
 h1 {
-  font-weight: 700;
+  @include bold-text;
   font-size: 30px;
 }
 
 h2 {
-  font-weight: 500;
+  @include normal-text;
 }
 
 h3 {
-  font-weight: 400;
+  @include light-text;
 }
