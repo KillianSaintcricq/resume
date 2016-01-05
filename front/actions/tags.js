@@ -84,7 +84,7 @@ function fetchTagsFailure() {
 export function fetchTags() {
     return dispatch => {
         dispatch(fetchTagsRequest());
-        return fetch(api() + '/api/tags/')
+        return fetch(api() + 'api/tags/')
             .then(response => response.json())
             .then(json => dispatch(fetchTagsSuccess(json)))
             .catch(error => dispatch(fetchTagsFailure(error)));
