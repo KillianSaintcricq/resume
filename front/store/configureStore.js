@@ -5,7 +5,9 @@ import createLogger from 'redux-logger';
 
 export default function configureStore(initialState) {
 
-    const loggerMiddleware = createLogger();
+    const loggerMiddleware = createLogger({
+        predicate: (getState, action) => process.env.NODE_ENV === 'development'
+    });
     const createStoreWithMiddleware = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
     const store = createStoreWithMiddleware(resumeApp, initialState);
 
