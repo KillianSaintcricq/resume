@@ -14,6 +14,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "express": "^4.13.3",
     "classnames": "^2.2.1",
     "isomorphic-fetch": "^2.2.0",
     "react": "^0.14.0",
@@ -24,25 +25,24 @@
     "redux": "^3.0.0",
     "redux-thunk": "^1.0.3",
     "reselect": "^2.0.1",
-    "webpack": "^1.9.11"
+    "webpack": "^1.9.11",
+    "path": "^0.12.7",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.12.3"
   },
   "devDependencies": {
     "babel-core": "^5.6.18",
     "babel-loader": "^5.1.4",
     "babel-plugin-react-transform": "^1.1.0",
-    "css-loader": "^0.23.1",
     "deep-freeze": "0.0.1",
     "expect": "^1.13.4",
-    "express": "^4.13.3",
     "mocha": "^2.3.4",
     "nock": "^3.6.0",
-    "node-sass": "^3.4.2",
-    "path": "^0.12.7",
     "react-transform-hmr": "^1.0.0",
     "redux-logger": "^2.3.1",
     "redux-mock-store": "0.0.4",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.12.3",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.2.0"
   }
