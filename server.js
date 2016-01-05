@@ -9,7 +9,7 @@ var port = process.env.PORT || 1993;
 
 // Webpack configuration
 var compiler = webpack(config);
-if (process.env !== "production") {
+if (process.env.NODE_ENV === "development") {
     app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
     app.use(webpackHotMiddleware(compiler));
 }
