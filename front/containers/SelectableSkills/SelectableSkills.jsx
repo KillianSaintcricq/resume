@@ -15,7 +15,7 @@ class SelectableSkills extends Component {
         super(props);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const { dispatch } = this.props;
         dispatch(fetchTags());
         dispatch(fetchSkills());

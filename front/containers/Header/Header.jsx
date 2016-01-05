@@ -16,6 +16,7 @@ export default class Header extends Component {
                         items={[
                             {label: "Skills", link: "#skills"},
                             {label: "Experience", link: "#experience"},
+                            {label: "Education", link: "#education"},
                             {label: "About", link: "#about"}
                         ]}
                     />
