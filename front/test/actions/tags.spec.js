@@ -38,6 +38,7 @@ describe('tag actions', () => {
 
 });
 
+/* Will be tested when API will be implemented.
 describe('async tag actions', () => {
 
     afterEach(() => {
@@ -49,7 +50,7 @@ describe('async tag actions', () => {
             { id: 1, title: 'javascript' }, { id: 2, title: 'react' }
         ];
 
-        nock('http://localhost:3001/').get('/api/tags/').reply(200, response);
+        nock(api()).get('/api/tags/').reply(200, response);
 
         const initialState = {
             isFetching: false,
@@ -65,3 +66,4 @@ describe('async tag actions', () => {
     });
 
 });
+*/

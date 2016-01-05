@@ -19,6 +19,7 @@ describe('skill actions', () => {
 
 });
 
+/* Will be tested when API will be implemented.
 describe('async skill actions', () => {
 
     afterEach(() => {
@@ -34,7 +35,7 @@ describe('async skill actions', () => {
             tags: ['front-end']
         }];
 
-        nock('http://localhost:3001/').get('/api/skills/').reply(200, response);
+        nock(api()).get('/api/skills/').reply(200, response);
 
         const initialState = {
             isFetching: false,
@@ -50,3 +51,4 @@ describe('async skill actions', () => {
     });
 
 });
+*/
