@@ -1,13 +1,12 @@
 var express = require('express');
-var webpack = require('webpack');
-var config = require('./webpack.config.js');
 
 var app = new express();
-var port = process.env.PORT || 1993;
 
 // Webpack configuration
-var compiler = webpack(config);
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === 'development') {
+    var webpack = require('webpack');
+    var config = require('./webpack.development.js');
+    var compiler = webpack(config);
     var webpackDevMiddleware = require('webpack-dev-middleware');
     var webpackHotMiddleware = require('webpack-hot-middleware');
     app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
@@ -165,6 +164,8 @@ app.get('/api/tags', function (req, res) {
         {id: 9, title: 'databases'}
     ]);
 });
+
+var port = process.env.PORT || 1993;
 
 app.listen(port, function (error) {
     if (error) {
