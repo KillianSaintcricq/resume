@@ -11,6 +11,10 @@ if (process.env.NODE_ENV === 'development') {
     var webpackHotMiddleware = require('webpack-hot-middleware');
     app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
     app.use(webpackHotMiddleware(compiler));
+} else {
+    app.get("/dist/bundle.js", function (req, res) {
+        res.sendFile(__dirname + '/dist/bundle.js');
+    })
 }
 
 app.get("/", function (req, res) {
