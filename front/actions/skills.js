@@ -52,7 +52,7 @@ function fetchSkillsFailure() {
 export function fetchSkills() {
     return dispatch => {
         dispatch(fetchSkillsRequest());
-        return fetch('http://localhost:3001/api/skills/')
+        return fetch('http://localhost:1993/api/skills/')
             .then(response => response.json())
             .then(json => dispatch(fetchSkillsSuccess(json)))
             .catch(error => dispatch(fetchSkillsFailure()));
