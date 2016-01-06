@@ -8,7 +8,7 @@ var paths = {
 };
 
 module.exports = {
-    entry: paths.app + '/index.jsx',
+    entry: paths.app + '/main.js',
     output: {
         path: paths.build,
         filename: 'bundle.js',

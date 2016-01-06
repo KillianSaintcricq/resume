@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
-    paths.app + '/index.jsx'
+    paths.app + '/main.js'
   ],
   output: {
     path: paths.build,
