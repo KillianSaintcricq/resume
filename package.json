@@ -4,8 +4,8 @@
   "description": "Resume of Killian Saint cricq",
   "main": "server.js",
   "scripts": {
-    "start": "webpack -p --config webpack.production.js && node server.js",
-    "devstart": "node server.js",
+    "start": "node server",
+    "postinstall": "node deploy",
     "test": "mocha --compilers js:babel-core/register --recursive front",
     "test:watch": "npm test -- --watch"
   },
