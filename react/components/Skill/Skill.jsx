@@ -33,7 +33,7 @@ export default class Skill extends Component {
 }
 
 Skill.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,
     tags: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired

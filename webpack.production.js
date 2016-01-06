@@ -3,12 +3,13 @@ var webpack = require('webpack');
 
 var paths = {
     modules: path.resolve(__dirname, 'node_modules'),
-    app: path.resolve(__dirname, 'app'),
+    api: path.resolve(__dirname, 'api'),
+    app: path.resolve(__dirname, 'react'),
     build: path.resolve(__dirname, 'public', 'build')
 };
 
 module.exports = {
-    entry: paths.app + '/main.js',
+    entry: path.join(paths.app, 'index.js'),
     output: {
         path: paths.build,
         filename: 'bundle.js',
@@ -17,11 +18,11 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js(x)?$/,
-            loaders: [ 'babel' ],
-            exclude: /node_modules/
+            loaders: ['babel'],
+            exclude: [paths.modules, paths.api]
         }, {
             test: /\.scss?$/,
-            loaders: [ 'style', 'css', 'sass' ]
+            loaders: ['style', 'css', 'sass']
         }]
     }
 };

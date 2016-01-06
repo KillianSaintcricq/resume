@@ -39,7 +39,7 @@ Tags.propTypes = {
     onTagClick: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
     tags: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         selected: PropTypes.bool.isRequired
     }).isRequired).isRequired

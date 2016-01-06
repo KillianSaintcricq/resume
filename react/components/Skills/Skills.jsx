@@ -36,5 +36,10 @@ export default class Skills extends Component {
 
 Skills.propTypes = {
     onSkillVoteButtonClick: PropTypes.func.isRequired,
-    skills: PropTypes.array.isRequired
+    skills: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        votes: PropTypes.number.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+    }).isRequired).isRequired
 };

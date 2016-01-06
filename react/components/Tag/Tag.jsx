@@ -6,8 +6,8 @@ import './tag.scss';
 export default class Tag extends Component {
 
     render() {
-        const { title, onClick } = this.props;
-        const classes = classNames('tag', { active: this.props.selected });
+        const { selected, onClick } = this.props;
+        const classes = classNames('tag', { active: selected });
         return (
             <li className={classes} onClick={onClick}>
                 {this.props.children}
