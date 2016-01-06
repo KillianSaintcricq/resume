@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-fetch';
 import * as types from '../constants/ActionTypes';
-import api from '../utils/api';
 
 /**
  * Creates an action that lets the application know a user has voted.
@@ -53,7 +52,7 @@ function fetchSkillsFailure() {
 export function fetchSkills() {
     return dispatch => {
         dispatch(fetchSkillsRequest());
-        return fetch(api() + 'api/skills/')
+        return fetch('/api/skills/')
             .then(response => response.json())
             .then(json => dispatch(fetchSkillsSuccess(json)))
             .catch(error => dispatch(fetchSkillsFailure()));

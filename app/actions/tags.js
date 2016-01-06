@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-fetch';
 import * as types from '../constants/ActionTypes';
-import api from '../utils/api';
 
 /**
  * Creates an action that lets the application know a tag has been selected.
@@ -84,7 +83,7 @@ function fetchTagsFailure() {
 export function fetchTags() {
     return dispatch => {
         dispatch(fetchTagsRequest());
-        return fetch(api() + 'api/tags/')
+        return fetch('/api/tags/')
             .then(response => response.json())
             .then(json => dispatch(fetchTagsSuccess(json)))
             .catch(error => dispatch(fetchTagsFailure(error)));
