@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    ".git",
+    "public",
+    "node_modules",
+    "react"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js"
+}

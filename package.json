@@ -44,6 +44,7 @@
     "expect": "^1.13.4",
     "mocha": "^2.3.4",
     "nock": "^3.6.0",
+    "nodemon": "^1.8.1",
     "react-transform-hmr": "^1.0.0",
     "redux-mock-store": "0.0.4",
     "webpack-dev-middleware": "^1.2.0",
