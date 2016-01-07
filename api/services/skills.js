@@ -1,10 +1,10 @@
-var Skill = require('../models/Skill');
+const Skill = require('../models/Skill');
 
-exports.getAll = function (req, res) {
-    Skill.find(function (err, skills) {
+exports.getAll = (req, res) => {
+    Skill.find((err, skills) => {
         if (err) res.send(err);
         res.json(
-            skills.map(function (skill) {
+            skills.map(skill => {
                 return {
                     id: skill._id,
                     title: skill.title,
