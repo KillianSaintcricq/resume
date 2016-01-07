@@ -6,7 +6,10 @@
     "react"
   ],
   "env": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "MONGO_URL": "localhost",
+    "MONGO_PORT": 27017,
+    "MONGO_DATABASE": "resume"
   },
   "ext": "js"
 }
