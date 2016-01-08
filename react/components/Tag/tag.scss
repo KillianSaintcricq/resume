@@ -12,10 +12,6 @@
 
   @include tag($primary-color-lighten, black);
 
-  @media (max-width: $m-screen-max) {
-    flex-grow: 1;
-  }
-
   &.active {
     background-color: $primary-color;
     color: $light-primary-color;

@@ -4,6 +4,12 @@
   }
 }
 
+@mixin hide-on-screen-size-and-greater($screen-size) {
+  @media (min-width: $screen-size) {
+    display: none !important;
+  }
+}
+
 @mixin very-light-text {
   font-weight: 300;
 }

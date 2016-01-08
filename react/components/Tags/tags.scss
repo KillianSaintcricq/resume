@@ -1,18 +1,37 @@
 @import '../../styles/_mixins';
 @import '../../styles/_colors';
+@import '../../styles/_screens';
 
 .tags {
 
   display: flex;
   flex-direction: column;
 
-  .values, .selectors {
+  .values {
+
     display: flex;
     flex-flow: row wrap;
     align-items: flex-end;
+
     .strong {
       @include light-text;
     }
+
+    @media (max-width: $s-screen-max) {
+      flex-flow: row nowrap;
+    }
+
+    .value {
+      @media (max-width: $m-screen-max) {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+      @media (max-width: $s-screen-max) {
+        flex-shrink: 1;
+      }
+    }
+
   }
+
 
 }

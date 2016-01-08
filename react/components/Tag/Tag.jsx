@@ -6,10 +6,10 @@ import './tag.scss';
 export default class Tag extends Component {
 
     render() {
-        const { selected, onClick } = this.props;
-        const classes = classNames('tag', { active: selected });
+        const { selected, classes, onClick } = this.props;
+        const tagClasses = classNames('tag', classes, { active: selected });
         return (
-            <li className={classes} onClick={onClick}>
+            <li className={tagClasses} onClick={onClick}>
                 {this.props.children}
             </li>
         );
@@ -18,5 +18,6 @@ export default class Tag extends Component {
 }
 
 Tag.propTypes = {
-    selected: PropTypes.bool.isRequired
+    selected: PropTypes.bool.isRequired,
+    classes: PropTypes.string
 };

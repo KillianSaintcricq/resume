@@ -11,17 +11,22 @@ export default class Tags extends Component {
             <section className="tags">
                 <h2 className="label">{label}</h2>
                 <ul className="values without-bullets">
-                    <Tag selected={false} onClick={() => onEverythingClick()}>
+                    <Tag selected={false} classes="value" onClick={() => onEverythingClick()}>
                         <span className="strong">Everything</span>
                     </Tag>
-                    <Tag selected={false} onClick={() => onRandomClick(tags.map(tag => tag.id))}>
+                    <Tag selected={false} classes="value" onClick={() => onRandomClick(tags.map(tag => tag.id))}>
                         <span className="strong">Random</span>
                     </Tag>
-                    <Tag selected={false} onClick={() => onNothingClick()}>
+                    <Tag selected={false} classes="value" onClick={() => onNothingClick()}>
                         <span className="strong">Nothing</span>
                     </Tag>
                     {tags.map(tag =>
-                        <Tag selected={tag.selected} key={tag.id} onClick={() => onTagClick(tag.id)}>
+                        <Tag
+                            selected={tag.selected}
+                            classes="hide-on-s-and-lower value"
+                            key={tag.id}
+                            onClick={() => onTagClick(tag.id)}
+                        >
                             {tag.title}
                         </Tag>
                     )}

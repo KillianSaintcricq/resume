@@ -10,14 +10,19 @@ export default class Skill extends Component {
         const idS = id.toString();
         return (
             <span className="skill">
-                <button className="vote hide-on-s-and-lower" onClick={onVoteClick} data-tip data-for={idS}>
+                <button className="vote-btn hide-on-s-and-lower" onClick={onVoteClick} data-tip data-for={idS}>
                     <i className="material-icons icon">thumb_up</i>
                 </button>
                 <ReactTooltip id={idS} effect="solid">
-                    <span>{votes}</span>
+                    <span>{votes} upvotes</span>
                 </ReactTooltip>
                 <div className="content-container">
-                    <h3 className="title">{title}</h3>
+                    <div className="title-container">
+                        <h3 className="title">{title}</h3>
+                        <span className="vote-txt hide-on-m-and-greater">
+                            | {votes} <i className="material-icons icon">thumb_up</i>
+                        </span>
+                    </div>
                     <div className="skill-tags-container">
                         {tags.map((tag, index) =>
                             <span className="skill-tags" key={index}>

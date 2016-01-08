@@ -6,7 +6,7 @@ export default class Presentation extends Component {
     render() {
         return (
             <section className="presentation">
-                {this.props.children}
+                <p>{this.props.children}</p>
             </section>
         )
     }

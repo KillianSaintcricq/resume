@@ -20,7 +20,7 @@
     flex-grow: 1;
   }
 
-  .vote {
+  .vote-btn {
 
     display: flex;
     flex-direction: row;
@@ -49,14 +49,28 @@
 
     flex-grow: 1;
     background-color: $secondary-color;
+    padding-right: 12px;
 
-    .title {
-      margin: 0;
-      padding: 20px 36px 4px 12px;
+    .title-container {
+
+      display: flex;
+      align-items: baseline;
+
+      .title {
+        margin: 0;
+        padding: 20px 0 4px 12px;
+      }
+      .vote-txt {
+        margin-left: 6px;
+        .icon {
+          font-size: 12px;
+        }
+      }
+
     }
 
     .skill-tags-container {
-      padding: 0 36px 20px 12px;
+      padding: 0 0 20px 12px;
     }
 
   }

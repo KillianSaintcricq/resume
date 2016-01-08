@@ -4,6 +4,10 @@
 
 /* Page structure */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   @include very-light-text;
   font-family: 'Roboto';
@@ -37,6 +41,10 @@ body {
   @include hide-on-screen-size-and-lower($s-screen-max)
 }
 
+.hide-on-m-and-greater {
+  @include hide-on-screen-size-and-greater($m-screen-min)
+}
+
 ul.without-bullets {
   list-style-type: none;
   padding: 0;
@@ -55,4 +63,12 @@ h2 {
 
 h3 {
   @include light-text;
+}
+
+/* On small screens */
+
+@media (max-width: $s-screen-max) {
+  h1, h2, p {
+    text-align: center;
+  }
 }
