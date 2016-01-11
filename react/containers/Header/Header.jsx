@@ -3,7 +3,7 @@ import SelectableSkills from './../SelectableSkills/SelectableSkills.jsx';
 import Nav from '../../components/Nav/Nav.jsx';
 import Presentation from '../../components/Presentation/Presentation.jsx';
 
-import './Header.scss';
+import './header.scss';
 
 export default class Header extends Component {
 
