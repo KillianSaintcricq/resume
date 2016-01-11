@@ -6,6 +6,8 @@ import configureStore from './store/configureStore';
 import App from './containers/App/App.jsx';
 import * as actions from './actions/tags';
 
+import './styles/global.scss';
+
 const store = configureStore();
 
 render(
