@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app",
     "postinstall": "node deploy",
-    "test": "mocha --compilers js:babel-core/register --recursive front",
+    "test": "mocha --compilers js:babel-core/register --recursive react",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
