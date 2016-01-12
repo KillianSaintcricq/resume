@@ -11,10 +11,6 @@ import './selectableSkills.scss'
 
 class SelectableSkills extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     componentWillMount() {
         const { dispatch } = this.props;
         dispatch(fetchTags());

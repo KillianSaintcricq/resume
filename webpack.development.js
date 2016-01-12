@@ -30,8 +30,11 @@ module.exports = {
             loaders: ['babel'],
             exclude: [paths.modules, paths.api]
         }, {
-            test: /\.scss?$/,
+            test: /\.scss$/,
             loaders: ['style', 'css', 'sass']
+        }, {
+            test: /\.jpg$/,
+            loader: 'file'
         }]
     }
 };
