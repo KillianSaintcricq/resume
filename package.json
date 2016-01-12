@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app",
     "postinstall": "node deploy",
-    "test": "mocha --compilers js:babel-core/register --recursive react",
+    "test": "mocha --compilers js:babel-core/register --recursive react/test",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
@@ -43,6 +43,7 @@
   "devDependencies": {
     "deep-freeze": "0.0.1",
     "expect": "^1.13.4",
+    "ignore-styles": "^1.2.0",
     "mocha": "^2.3.4",
     "nock": "^3.6.0",
     "nodemon": "^1.8.1",
