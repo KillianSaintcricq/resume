@@ -26,9 +26,14 @@ describe('skills reducer', () => {
             isFetching: false,
             values: [
                 {
+                    id: 3,
+                    title: 'Java',
+                    votes: 2,
+                    tags: ['back-end']
+                },
+                {
                     id: 1,
                     title: 'Javascript',
-                    text: 'I am in love with Javascript!',
                     votes: 2,
                     tags: ['front-end']
                 }
@@ -43,9 +48,14 @@ describe('skills reducer', () => {
             isFetching: false,
             values: [
                 {
+                    id: 3,
+                    title: 'Java',
+                    votes: 2,
+                    tags: ['back-end']
+                },
+                {
                     id: 1,
                     title: 'Javascript',
-                    text: 'I am in love with Javascript!',
                     votes: 3,
                     tags: ['front-end']
                 }
@@ -62,10 +72,15 @@ describe('skills reducer', () => {
             isFetching: false,
             values: [
                 {
-                    id: 1,
-                    title: 'Javascript',
-                    text: 'I am in love with Javascript!',
+                    id: 2,
+                    title: 'Java',
                     votes: 2,
+                    tags: ['back-end']
+                },
+                {
+                    id: 5,
+                    title: 'Javascript',
+                    votes: 5,
                     tags: ['front-end']
                 }
             ]
@@ -78,10 +93,15 @@ describe('skills reducer', () => {
             isFetching: true,
             values: [
                 {
-                    id: 1,
-                    title: 'Javascript',
-                    text: 'I am in love with Javascript!',
+                    id: 2,
+                    title: 'Java',
                     votes: 2,
+                    tags: ['back-end']
+                },
+                {
+                    id: 5,
+                    title: 'Javascript',
+                    votes: 5,
                     tags: ['front-end']
                 }
             ]
@@ -98,7 +118,6 @@ describe('skills reducer', () => {
                 {
                     id: 1,
                     title: 'Javascript',
-                    text: 'I am in love with Javascript!',
                     votes: 2,
                     tags: ['front-end']
                 }
@@ -110,7 +129,6 @@ describe('skills reducer', () => {
                 {
                     id: 3,
                     title: 'Java',
-                    text: 'I used Java a lot.',
                     votes: 6,
                     tags: ['back-end']
                 }
@@ -123,7 +141,6 @@ describe('skills reducer', () => {
                 {
                     id: 3,
                     title: 'Java',
-                    text: 'I used Java a lot.',
                     votes: 6,
                     tags: ['back-end']
                 }
@@ -142,7 +159,6 @@ describe('skills reducer', () => {
                 {
                     id: 1,
                     title: 'Javascript',
-                    text: 'I am in love with Javascript!',
                     votes: 2,
                     tags: ['front-end']
                 }

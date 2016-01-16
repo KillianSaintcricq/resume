@@ -21,7 +21,7 @@ export default function skills(state = initialState, action) {
             return {
                 ...state,
                 isFetching: false,
-                values: action.skills
+                values: action.skills.sort((skillA, skillB) => skillB.votes - skillA.votes)
             };
         case FETCH_SKILLS_FAILURE:
             return {
