@@ -13,11 +13,12 @@ export default class Header extends Component {
                 <div className="container">
                     <Nav
                         name="Killian Saint cricq"
+                        index="/"
                         items={[
-                            {label: "Skills", link: "#skills"},
-                            {label: "Experience", link: "#experience"},
-                            {label: "Education", link: "#education"},
-                            {label: "About", link: "#about"}
+                            {label: "Skills", link: "/skills"},
+                            {label: "Experience", link: "/experience"},
+                            {label: "Education", link: "education"},
+                            {label: "About", link: "about"}
                         ]}
                     />
                     <Presentation>

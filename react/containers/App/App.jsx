@@ -11,17 +11,7 @@ export default class App extends Component {
         return (
             <div className="app">
                 <Header />
-                <SelectableSkills />
-                <Experience />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+                {this.props.children}
             </div>
         );
     }
