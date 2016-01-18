@@ -17,8 +17,8 @@ export default class Experience extends Component {
                 <section className="content">
                     <div className="container">
                         <h2>Experience</h2>
+                        <Experiences />
                     </div>
-                    <Experiences />
                 </section>
             </section>
         );
