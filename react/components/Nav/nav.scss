@@ -1,7 +1,6 @@
 @import '../../styles/_mixins';
 @import '../../styles/_colors';
 
-
 .nav {
 
   display: flex;
@@ -15,6 +14,7 @@
     .index {
       text-decoration: none;
       color: black;
+      @include tag(white, $secondary-color);
     }
 
   }
