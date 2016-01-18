@@ -1,15 +1,17 @@
 @import '../../styles/_colors';
-@import '../../styles/_screens';
 
 .selectable-skills {
 
-  background-color: $light-secondary-color;
+  .content {
+    background-color: $light-secondary-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 
   .container {
 
     display: flex;
     flex-flow: column;
-    margin-bottom: 20px;
 
   }
 

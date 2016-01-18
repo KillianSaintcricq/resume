@@ -21,9 +21,6 @@ export default class Header extends Component {
                             {label: "About", link: "about"}
                         ]}
                     />
-                    <Presentation>
-                        Hello!! Welcome on my website :-)
-                    </Presentation>
                 </div>
             </header>
         );
