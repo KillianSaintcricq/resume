@@ -9,7 +9,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header className="page-section header">
+            <header className="header">
                 <div className="container">
                     <Nav
                         name="Killian Saint cricq"
