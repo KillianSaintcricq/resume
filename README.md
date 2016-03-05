@@ -1,4 +1,14 @@
-# Resume
+# Selectable tags
+
+## About
+
+This is a react-based component compounded with:
+* a list of tags
+* a list of elements related to the tags
+
+When a tag is selected, the elements related to the tag are shown. When it is unselected, they are hidden.
+
+## Getting started
 
 How to start the application in development
 
