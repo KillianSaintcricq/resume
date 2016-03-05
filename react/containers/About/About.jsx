@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import Presentation from '../../components/Presentation/Presentation.jsx';
-import Experiences from '../../components/Experiences/Experiences.jsx';
 
-import './experience.scss';
+import './about.scss';
 
-export default class Experience extends Component {
+export default class About extends Component {
 
     render() {
         return (
             <section className="page-section experience">
                 <div className="container">
                     <Presentation>
-                        Experience section...
+                        About section...
                     </Presentation>
                 </div>
                 <section className="content">
                     <div className="container">
-                        <h2>Experience</h2>
-                        <Experiences />
+                        <h2>About</h2>
                     </div>
                 </section>
             </section>

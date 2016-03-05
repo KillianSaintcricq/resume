@@ -6,15 +6,14 @@
   display: flex;
   flex-flow: row wrap;
   align-items: baseline;
+  justify-content: center;
 
   .site-name {
 
     flex-grow: 1;
 
-    .index {
-      text-decoration: none;
-      color: black;
-      @include tag(white, $secondary-color);
+    .light {
+      font-weight: 300;
     }
 
   }
@@ -39,10 +38,12 @@
           color: black;
           padding: 10px 10px;
 
-          @include tag(white, $primary-color);
+          &:hover {
+            border-bottom: 2px solid black;
+          }
 
           &.active {
-            color: $primary-color;
+            border-bottom: 2px solid black;
           }
 
         }

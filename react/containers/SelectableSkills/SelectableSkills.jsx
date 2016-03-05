@@ -40,6 +40,7 @@ class SelectableSkills extends Component {
                         Skills section...
                     </Presentation>
                 </div>
+                <hr />
                 <section className="content">
                     <div className="container">
                         <section className="tags-container">
