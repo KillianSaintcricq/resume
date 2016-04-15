@@ -2,7 +2,7 @@
 
 ## About
 
-This is a react-based component compounded with:
+This is a react-based component with:
 * a list of tags
 * a list of elements related to the tags
 
@@ -10,13 +10,14 @@ When a tag is selected, the elements related to the tag are shown. When it is un
 
 ## Getting started
 
-How to start the application in development
+Go to the project root and run:
 
     npm install
     mongod --dbpath your_mongo_data_storage_path
+    mongo < scripts/data.mongo
     nodemon
 
-How to start the application in production
+In production, run:
 
     SET NODE_ENV=production
     SET MONGO_URI=your_mongo_uri
