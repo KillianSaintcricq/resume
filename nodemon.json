@@ -7,7 +7,7 @@
   ],
   "env": {
     "NODE_ENV": "development",
-    "MONGO_URI": "mongodb://localhost/resume"
+    "MONGO_URI": "mongodb://localhost/skills"
   },
   "ext": "js"
 }
