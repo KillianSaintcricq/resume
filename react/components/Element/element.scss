@@ -2,7 +2,7 @@
 @import '../../styles/_screens';
 @import '../../styles/_mixins';
 
-.skill {
+.element {
 
   display: flex;
   flex-direction: row;
@@ -68,7 +68,7 @@
 
     }
 
-    .skill-tags-container {
+    .element-tags-container {
       padding: 0 0 20px 12px;
     }
 

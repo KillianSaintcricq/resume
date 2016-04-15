@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import ReactTooltip from 'react-tooltip';
 
-import './skill.scss';
+import './element.scss';
 
-export default class Skill extends Component {
+export default class Element extends Component {
 
     render() {
         const { id, title, votes, tags, onVoteClick } = this.props;
         const idS = id.toString();
         return (
-            <span className="skill">
+            <span className="element">
                 <button className="vote-btn hide-on-s-and-lower" onClick={onVoteClick} data-tip data-for={idS}>
                     <i className="material-icons icon">thumb_up</i>
                 </button>
@@ -23,9 +23,9 @@ export default class Skill extends Component {
                             | {votes} <i className="material-icons icon">thumb_up</i>
                         </span>
                     </div>
-                    <div className="skill-tags-container">
+                    <div className="element-tags-container">
                         {tags.map((tag, index) =>
-                            <span className="skill-tags" key={index}>
+                            <span className="element-tags" key={index}>
                                 {tag}{' '}
                             </span>
                         )}
@@ -37,7 +37,7 @@ export default class Skill extends Component {
 
 }
 
-Skill.propTypes = {
+Element.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,

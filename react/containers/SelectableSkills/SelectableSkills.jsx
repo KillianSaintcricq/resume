@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Presentation from '../../components/Presentation/Presentation.jsx';
 import Tags from '../../components/Tags/Tags.jsx';
 import { selectAll, selectTags, deselectAll, selectTag, fetchTags } from '../../actions/tags';
-import Skills from '../../components/Skills/Skills.jsx';
+import Elements from '../../components/Elements/Elements.jsx';
 import { voteForSkill, fetchSkills } from '../../actions/skills';
 import { visibleSkillsSelector } from '../../selectors/skills.js';
 import { randomValues } from '../../utils/random';
@@ -54,10 +54,10 @@ class SelectableSkills extends Component {
                             />
                         </section>
                         <section className="skills-container">
-                            <Skills
+                            <Elements
                                 label="Here is what I know about it!"
-                                skills={skills.values}
-                                onSkillVoteButtonClick={(id) => dispatch(voteForSkill(id))}
+                                elements={skills.values}
+                                onElementVoteButtonClick={(id) => dispatch(voteForSkill(id))}
                             />
                         </section>
                     </div>
