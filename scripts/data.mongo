@@ -1,0 +1,66 @@
+use skills;
+db.dropDatabase();
+use skills;
+
+db.tags.insert({title: "front end"});
+db.tags.insert({title: "back end"});
+db.tags.insert({title: "programming language"});
+db.tags.insert({title: "framework"});
+db.tags.insert({title: "database"});
+db.tags.insert({title: "mobile"});
+
+db.skills.insert({
+    title: "Javascript",
+    votes: 0,
+    tags: ["front end", "programming language"]
+});
+db.skills.insert({
+    title: "React",
+    votes: 0,
+    tags: ["front end", "framework"]
+});
+db.skills.insert({
+    title: "Laravel",
+    votes: 0,
+    tags: ["back end", "framework"]
+});
+db.skills.insert({
+    title: "AngularJS",
+    votes: 0,
+    tags: ["front end", "framework"]
+});
+db.skills.insert({
+    title: "Java",
+    votes: 0,
+    tags: ["programming language"]
+});
+db.skills.insert({
+    title: "PHP",
+    votes: 0,
+    tags: ["programming language"]
+});
+db.skills.insert({
+    title: "HTML5",
+    votes: 0,
+    tags: ["programming language"]
+});
+db.skills.insert({
+    title: "MongoDB",
+    votes: 0,
+    tags: ["database"]
+});
+db.skills.insert({
+    title: "ElasticSearch",
+    votes: 0,
+    tags: ["database"]
+});
+db.skills.insert({
+    title: "Android",
+    votes: 0,
+    tags: ["mobile"]
+});
+db.skills.insert({
+    title: "Cordova",
+    votes: 0,
+    tags: ["mobile"]
+});
